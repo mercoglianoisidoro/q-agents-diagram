@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/aws/amazon-q-developer-cli/refs/heads/main/schemas/agent-v1.json",
+  "name": "graph-mermaid",
+  "description": "follow the instructions to create mermaid diagrams of AWS resources",
+  "prompt": "file://.amazonq/cli-agents/system-prompt.md#System Prompt",
+  "mcpServers": {
+    "mermaid-validator": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@rtuin/mcp-mermaid-validator@latest"
+      ],
+      "autoApprove": [
+        "*"
+      ]
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "autoApprove": [
+        "*"
+      ],
+      "disabled": false
+    }
+  },
+  "tools": [
+    "fs_read",
+    "fs_write",
+    "use_aws",
+    "execute_bash",
+    "introspect"
+  ],
+  "allowedTools": [
+    "fs_read",
+    "fs_write",
+    "use_aws",
+    "execute_bash",
+    "introspect"
+  ],
+  "resources": [
+    "file://.amazonq/cli-agents/system-prompt.md",
+    "file://.amazonq/cli-agents/aws-credentials.md",
+    "file://aws-credentials.md",
+    "file://.amazonq/cli-agents/aws-credentials.md"
+  ],
+  "hooks": {},
+  "toolsSettings": {
+    "use_aws": {
+      "autoAllowReadonly": true,
+      "allowedServices": [
+        "*"
+      ],
+      "preferredServices": [
+        "neptune",
+        "quicksight",
+        "cloudformation",
+        "ec2",
+        "vpc"
+      ],
+      "allowCrossAccount": true,
+      "allowAssumeRole": true,
+      "allowedProfiles": [
+        "*"
+      ]
+    },
+    "execute_bash": {
+      "autoAllowReadonly": true,
+      "allowedCommands": [
+        "dot",
+        "neato",
+        "fdp",
+        "sfdp",
+        "circo",
+        "twopi",
+        "python",
+        "node",
+        "npm",
+        "aws",
+        "mkdir",
+        "echo",
+        "cat",
+        "tee"
+      ]
+    },
+    "fs_write": {
+      "allowedExtensions": [
+        ".dot",
+        ".graphml",
+        ".json",
+        ".svg",
+        ".png",
+        ".html",
+        ".py",
+        ".js",
+        ".md"
+      ],
+      "allowedPaths": [
+        "./output/**"
+      ],
+      "allowedDirectories": [
+        "output"
+      ]
+    }
+  },
+  "useLegacyMcpJson": true,
+  "model": "claude-sonnet-4.5"
+}
