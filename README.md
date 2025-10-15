@@ -98,6 +98,49 @@ npm install -g @rtuin/mcp-mermaid-validator
 pip install uvx
 ```
 
+
+## Usage
+
+`q chat --agent graph-mermaid|graph-aws`
+
+
+## Usage Examples
+
+### Basic Infrastructure Diagram
+
+Generate a complete infrastructure diagram for Ireland region:
+
+```bash
+# Using Mermaid agent
+q chat --agent graph-mermaid --no-interactive --trust-all-tools \
+  "create an infrastructure diagram of all the resources in the region Ireland"
+
+# Using AWS diagram agent
+q chat --agent graph-aws --no-interactive --trust-all-tools \
+  "create an infrastructure diagram of all the resources in the region Ireland"
+```
+
+
+### Interactive Mode
+
+For more complex requirements, use interactive mode:
+
+```bash
+q chat --agent graph-mermaid
+```
+
+### Custom Profile and Region
+
+Use specific AWS profile and region:
+
+```bash
+q chat --agent graph-aws --no-interactive --trust-all-tools \
+  "create a diagram of the aws account showing only the s3 buckets: use 'isi' profile and ireland region"
+```
+
+
+
+
 ## Configuration
 
 ### AWS Credentials
@@ -119,39 +162,6 @@ Each agent has a JSON configuration file that defines:
 - Model settings (Claude Sonnet 4.5)
 
 
-## Usage Examples
-
-### Basic Infrastructure Diagram
-
-Generate a complete infrastructure diagram for Ireland region:
-
-```bash
-# Using Mermaid agent
-q chat --agent graph-mermaid --no-interactive --trust-all-tools \
-  "create an infrastructure diagram of all the resources in the region Ireland"
-
-# Using AWS diagram agent
-q chat --agent graph-aws --no-interactive --trust-all-tools \
-  "create an infrastructure diagram of all the resources in the region Ireland"
-```
-
-
-### Custom Profile and Region
-
-Use specific AWS profile and region:
-
-```bash
-q chat --agent graph-aws --no-interactive --trust-all-tools \
-  "create a diagram of the aws account showing only the s3 buckets: use 'isi' profile and ireland region"
-```
-
-### Interactive Mode
-
-For more complex requirements, use interactive mode:
-
-```bash
-q chat --agent graph-mermaid
-```
 
 ## Output Structure
 
