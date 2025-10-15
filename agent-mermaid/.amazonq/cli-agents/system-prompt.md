@@ -60,5 +60,26 @@ config:
 ---
 ```
 
+## Specific diagrmas
+
+The user can ask for some specific diagram. Here is the list of the specific diagram types.
+- 'vpc-diagram'
+  - this diagram consider only the resources attached to and included in one or more VPC
+  - minimal resources and minimal elements type that you have to include, considering the scope of the diagram:
+    - vpc
+    - vpc elements
+    - pvc endpoint
+    - security group used
+    - NAT
+    - IGM
+    - VPC endpoints
+    - routes
+    - internet traffic / access
+    - any other resources or service used by the traffic flow like WAF, Firewall and network devices
+    - load balancers
+    - ec2 instances
+
+
+
 ## Note
 the user could be interested in the Kvalue, in this case provide the number 50.
