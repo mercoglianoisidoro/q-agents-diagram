@@ -155,12 +155,13 @@ You can configure available profiles in the `aws-credentials.md` files within ea
 
 ### Agent Configuration
 
-Each agent has a JSON configuration file that defines:
-- MCP servers and their commands
-- Allowed tools and services
-- File system permissions
-- Model settings (Claude Sonnet 4.5)
+Any agent is defined and configured mainly by two files:
+- {agent-name}.json: it configure the basic information of the agent
+- system-prompt.md: it configure the behavior of the agent.
 
+Diagram type:
+outcomes are better when you define the type of diagram you need. You can define the type of types of diagram in the system prompt (system-prompt.md).
+In the system-prompt.md file there is an example called 'vpc-diagram': you can enrich the system prompts.
 
 
 ## Output Structure
@@ -211,3 +212,7 @@ Each output file includes:
 
 - **GitHub**: [mercoglianoisidoro/q-agents-diagram](https://github.com/mercoglianoisidoro/q-agents-diagram)
 - **Issues**: Report bugs or request features via GitHub Issues
+
+
+
+TODO: check subscription
