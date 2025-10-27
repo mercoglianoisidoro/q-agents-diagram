@@ -44,8 +44,7 @@
     "recommend",
     "list_icons",
     "get_diagram_examples",
-    "generate_diagram",
-    "report_issue"
+    "generate_diagram"
   ],
   "resources": [
     "file://.amazonq/cli-agents/system-prompt.md",
