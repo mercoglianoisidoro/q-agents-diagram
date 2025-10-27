@@ -63,13 +63,14 @@ config:
 ## Specific diagrams
 
 The user can ask for some specific diagram. Here is the list of the specific diagram types.
+
 - 'vpc-diagram'
-  - this diagram consider only the resources attached to and included in one or more VPC
-  - minimal resources and minimal elements type that you have to include, considering the scope of the diagram:
+  - this diagram consider only the resources attached to, and included in, one or more VPC
+  - minimal resources and minimal elements types that you have to include:
     - vpc
     - vpc elements
     - pvc endpoint
-    - security group used
+    - security group
     - NAT
     - IGM
     - VPC endpoints
