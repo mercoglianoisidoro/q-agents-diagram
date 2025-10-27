@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/aws/amazon-q-developer-cli/refs/heads/main/schemas/agent-v1.json",
   "name": "graph-mermaid",
   "description": "follow the instructions to create mermaid diagrams of AWS resources",
-  "prompt": "file://.amazonq/cli-agents/system-prompt.md#System Prompt",
+  "prompt": "file://system-prompt.md",
   "mcpServers": {
     "mermaid-validator": {
       "command": "npx",
@@ -39,13 +39,19 @@
     "fs_read",
     "fs_write",
     "use_aws",
-    "execute_bash",
-    "introspect"
+    "introspect",
+    "read_documentation",
+    "search_documentation",
+    "recommend",
+    "list_icons",
+    "get_diagram_examples",
+    "generate_diagram",
+    "report_issue"
   ],
   "resources": [
-    "file://.amazonq/cli-agents/system-prompt.md",
-    "file://.amazonq/cli-agents/aws-credentials.md",
+    "file://system-prompt.md",
     "file://aws-credentials.md",
+    "file://.amazonq/cli-agents/system-prompt.md",
     "file://.amazonq/cli-agents/aws-credentials.md"
   ],
   "hooks": {},
